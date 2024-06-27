@@ -11,5 +11,8 @@ public class LoginPage {
     @FindBy(xpath = "//form//input[contains(@id, 'input-') and @type='password']")  // инпут ввода пароля
     private WebElement passwordInput;
 
+    @FindBy(xpath = "//*[contains(text(), 'Войти')] [1]")  // кнопка Войти
+    private WebElement loginBtn;
+
 }
 
