@@ -11,25 +11,25 @@ import static org.hamcrest.Matchers.equalTo;
 public class APItest {
     @Test
     public void getTestOpenUrl(){
-        given().log().all().headers("Content-Type","application/json").headers("Accept","*/*").
-                when().get("https://megatop.by/")
+        given().log().all().headers("Content-Type","application/json").headers("Accept","*/*")
+                .when().get("https://megatop.by/")
                 .then().statusCode(200);
     }
     @Test
     public void getTestSearchByModelId() {
-        given().log().all().contentType(ContentType.JSON).
-                when().get("https://megatop.by/api/v1/search?query=0797000405&device=desktop").
-                then().statusCode(200).
-                body("products[0].name", equalTo("Кроссовки X-Plode 0797000405"));
+        given().log().all().contentType(ContentType.JSON)
+                .when().get("https://megatop.by/api/v1/search?query=0797000405&device=desktop")
+                .then().statusCode(200)
+                .body("products[0].name", equalTo("Кроссовки X-Plode 0797000405"));
     }
     @Test
     public void postTestLoginNegative(){
         File loginFile= new File("src/test/resources/json/incorrectLogin.json");
         given().log().all().contentType(ContentType.JSON).body(loginFile)
                 .when().post("https://admin.megatop.by/api/v1/user/login")
-                .then().statusCode(422).
-                body("status", equalTo("error")).
-                body("message", equalTo("Вы ввели неверный номер телефона и/или пароль"));
+                .then().statusCode(422)
+                .body("status", equalTo("error"))
+                .body("message", equalTo("Вы ввели неверный номер телефона и/или пароль"));
 
     }
     @Test
@@ -37,9 +37,17 @@ public class APItest {
         File loginFile= new File("src/test/resources/json/incorrectPassword.json");
         given().log().all().contentType(ContentType.JSON).body(loginFile)
                 .when().post("https://admin.megatop.by/api/v1/user/login")
-                .then().statusCode(422).
-                body("status", equalTo("error")).
-                body("message", equalTo("Вы ввели неверный номер телефона и/или пароль"));
+                .then().statusCode(422)
+                .body("status", equalTo("error"))
+                .body("message", equalTo("Вы ввели неверный номер телефона и/или пароль"));
 
+    }
+    @Test
+    public void postTestPositive(){
+        File loginFile= new File("src/test/resources/json/correctLoginAndPassword.json");
+        given().log().all().contentType(ContentType.JSON).body(loginFile)
+                .when().post("https://admin.megatop.by/api/v1/user/login")
+                .then().statusCode(200)
+                .body("status", equalTo("success"));
     }
 }
