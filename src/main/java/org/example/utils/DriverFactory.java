@@ -10,10 +10,10 @@ public class DriverFactory {
 
     public static WebDriver createDriver(String browser) {
         if (browser.equals("chrome")) {
-            System.setProperty("webdriver.chrome.driver", "C:\\Users\\Maxim\\Desktop\\chromedriver-win64\\chromedriver.exe");
+            System.setProperty("webdriver.chrome.driver", ConfProperties.getProperty("chromedriver"));
             return new ChromeDriver();
         } else if (browser.equals("firefox")) {
-            System.setProperty("webdriver.firefox.driver", "C:\\Users\\ZelenskayaOlga\\Downloads\\geckodriver-v0.34.0-win-aarch64\\geckodriver.exe");
+            System.setProperty("webdriver.firefox.driver", ConfProperties.getProperty("firefox"));
             return new FirefoxDriver();
         }
         return null;

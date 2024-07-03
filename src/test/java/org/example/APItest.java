@@ -2,16 +2,14 @@ package org.example;
 
 import io.restassured.http.ContentType;
 import org.testng.annotations.Test;
-
 import java.io.File;
-
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 
 public class APItest {
     @Test
     public void getTestOpenUrl(){
-        given().log().all().headers("Content-Type","application/json").headers("Accept","*/*")
+        given().log().all().contentType(ContentType.JSON).headers("Content-Type","application/json").headers("Accept","*/*")
                 .when().get("https://megatop.by/")
                 .then().statusCode(200);
     }

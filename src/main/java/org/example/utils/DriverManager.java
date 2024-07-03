@@ -4,11 +4,10 @@ import org.example.enums.Capability;
 import org.example.listeners.ElementActionListener;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.events.EventFiringDecorator;
-
-import java.time.Duration;
+import java.util.concurrent.TimeUnit;
 
 public class DriverManager {
-    static WebDriver driver;
+    public static WebDriver driver;
     static ThreadLocal<WebDriver> localDriver = new ThreadLocal<>();
 
     public synchronized static WebDriver getDriver() {
@@ -17,7 +16,8 @@ public class DriverManager {
             EventFiringDecorator<WebDriver> decorator = new EventFiringDecorator(new ElementActionListener());
             driver = decorator.decorate(driver);
             driver.manage().window().maximize();
-            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            driver.get(ConfProperties.getProperty("homepage"));
             localDriver.set(driver);
             return driver;
         } else {
