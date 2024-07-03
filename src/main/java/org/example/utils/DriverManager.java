@@ -17,14 +17,12 @@ public class DriverManager {
             driver = decorator.decorate(driver);
             driver.manage().window().maximize();
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-            driver.get(ConfProperties.getProperty("homepage"));
             localDriver.set(driver);
             return driver;
         } else {
             return localDriver.get();
         }
     }
-
     public static void quitDriver() {
         localDriver.get().quit();
         localDriver.set(null);
