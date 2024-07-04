@@ -1,6 +1,7 @@
 package org.example.pages;
 
 import org.example.utils.DriverManager;
+import org.example.utils.Waiters;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -42,6 +43,13 @@ public class HomePage {
      */
     @FindBy(xpath = "//*[@src='https://static.megatop.by/public/photo/0111311/320/0111311.jpg']")
     private WebElement searchResult;
+    /**
+     * определение локатора кнопки "Распродажа"
+     */
+    @FindBy(xpath = "//div[@class = 'static-link static-link__red']")
+    private WebElement saleBtn;
+
+
 
     /**
      * метод для осуществления нажатия кнопки "ДА", подтверждения верно определенного населенного пункта
@@ -63,12 +71,14 @@ public class HomePage {
      * метод для осуществления нажатия кнопки поиска товара
      */
     public void clickSearchBtn(){
+        Waiters.waitForSeconds(1);
         searchBtn.click();
     }
     /**
      * метод для осуществления ввода значения для поиска
      */
     public void putValue(String value) {
+        Waiters.waitForSeconds(1);
         searchInput.sendKeys(value + Keys.ENTER);
     }
     /**
@@ -77,5 +87,10 @@ public class HomePage {
     public void clickSearchResultIcon(){
         searchResult.click();
     }
-
+    /**
+     * метод для осуществления нажатия по кнопке "Распродажа"
+     */
+    public void clickSaleBtn(){
+        saleBtn.click();
+    }
 }

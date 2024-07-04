@@ -6,7 +6,7 @@ import java.io.File;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 
-public class APItest {
+public class APITest {
     @Test
     public void getTestOpenUrl(){
         given().log().all().contentType(ContentType.JSON).headers("Content-Type","application/json").headers("Accept","*/*")

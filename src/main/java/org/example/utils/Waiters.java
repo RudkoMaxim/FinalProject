@@ -1,4 +1,4 @@
-package Util;
+package org.example.utils;
 
 public class Waiters {
     public static void waitForSeconds(int seconds) {

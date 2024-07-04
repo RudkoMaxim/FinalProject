@@ -21,6 +21,13 @@ public class ProfilePage {
     @FindBy(xpath = "//*[contains(text(), 'Выйти')]")
     private WebElement logoutBtn;
     /**
+     * определение локатора ошибки при неверно введенном пароле
+     */
+    @FindBy(xpath = "//div[@class='v-messages__message']")
+    private WebElement errorTitle;
+
+
+    /**
      * метод для получения имени пользователя из меню пользователя
      */
     public String getUserName() {
@@ -32,4 +39,10 @@ public class ProfilePage {
     public void clickLogoutBtn(){
         logoutBtn.click();
         }
+    /**
+     * метод для получения ошибки при неверно введенном пароле
+     */
+    public String getErrorText() {
+        return errorTitle.getText();
+    }
 }
