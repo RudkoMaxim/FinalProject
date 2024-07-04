@@ -65,6 +65,12 @@ public class UITests extends BaseTest{
         //сравниваем ожидаемый и фактический результат
         Assert.assertEquals("ПОИСК ПО ЗАПРОСУ '108329606'", result);
     }
+    // Тест 3
+    // Описание:
+    //1. Пользователь открывает главную страницу;
+    //2. Пользователь переходит на страницу "Распродажа";
+    //3. Пользователь добавляет товар в корзину;
+
     @Test
     public void addToCartTest(){
         homePage = new HomePage();
@@ -79,12 +85,13 @@ public class UITests extends BaseTest{
         //нажимаем на кнопку "Добавить в корзину"
         salePage.clickAddToCartBtn();
         //поиск наименования товара, добавленного в корзину
-        cartPage.getProductTitleOnCart();
+        String cart = cartPage.getProductTitleOnCart();
         //нажатие на кнопку закрытия корзины
         cartPage.clickCloseCartBtn();
         //поиск наименования товара на странице, который ранее был добавлен в корзину
-        salePage.getProductTitleOnPage();
-        Assert.assertEquals("getProductTitleOnCart", "getProductTitleOnPage");
+        String main = salePage.getProductTitleOnPage();
+        //сравниваем наименвоание товара в корзине и на странице
+        Assert.assertEquals(cart, main.replaceAll("\n"," "));
     }
     // Тест 4
     // Описание:
