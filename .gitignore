@@ -12,7 +12,7 @@ target/
 *.iml
 *.ipr
 .idea/
-out/
+
 ### Eclipse ###
 .apt_generated
 .classpath
@@ -38,7 +38,7 @@ build/
 ### Mac OS ###
 .DS_Store
 
-# Log file
+# ignore all logs
 *.log
 
 
