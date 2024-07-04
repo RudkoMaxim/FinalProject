@@ -41,6 +41,5 @@ build/
 # Log file
 *.log
 
-# Maven #
-target/
+
 
