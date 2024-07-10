@@ -29,7 +29,7 @@ public class UITests extends BaseTest{
     @Test
     public void validPhoneAndPasswordTest() {
         homePage = new HomePage();
-        loginPage = new LoginPage();
+        loginPage = new LoginPage();//xcxgit
         profilePage = new ProfilePage();
         productPage = new ProductPage();
         salePage = new SalePage();
