@@ -26,8 +26,8 @@ public class BaseTest {
         homePage.clickCookieBtn();
     }
 
-//    @AfterMethod
-//    public void closeSession(){
-//        DriverManager.quitDriver();
-//    }
+    @AfterMethod
+    public void closeSession(){
+        DriverManager.quitDriver();
+    }
 }

@@ -11,19 +11,18 @@ public class ElementActionListener implements WebDriverListener {
     private static final Logger LOGGER = LogManager.getLogger(TestListeners.class);
     @Override
     public void beforeGet(WebDriver driver, String url) {
-        System.out.println("Open url https://megatop.by/");
+        LOGGER.info("Open url https://megatop.by/");
     }
     @Override
     public void afterClick(WebElement element) {
-
-        System.out.println("Click on " + element.getTagName() + " element");
+        LOGGER.info("Click on " + element.getTagName() + " element");
     }
     @Override
     public void afterGetText(WebElement element, String result) {
-        System.out.println("Get text from element " + element.getTagName());
+        LOGGER.info("Get text from element " + element.getTagName());
     }
     @Override
     public void afterFindElement(WebElement element, By locator, WebElement result) {
-        System.out.println("Find element " + element.getTagName() + " on page");
+        LOGGER.info("Find element " + element.getTagName() + " on page");
     }
 }

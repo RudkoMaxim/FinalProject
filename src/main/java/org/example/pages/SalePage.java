@@ -17,7 +17,7 @@ public class SalePage {
     /**
      * определение локатора наименования товара на странице
      */
-    @FindBy(xpath = "//a[@href='/products/1121000159-bosonozhki-o_live_naturalle' and @class='']")
+    @FindBy(xpath = "//a[@href='/products/1185000012-slancy-enjoin_' and @class='']")
     private WebElement productTitleOnPage;
     /**
      * определение локатора кнопки добавдения товара

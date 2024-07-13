@@ -9,22 +9,22 @@ public class TestListeners implements ITestListener {
     private static final Logger LOGGER = LogManager.getLogger(TestListeners.class);
     @Override
     public void onTestStart(ITestResult result) {
-        System.out.println("*******************************************************");
-        System.out.println("Test " + result.getMethod().getMethodName() + " started");
-        System.out.println("*******************************************************");
+        LOGGER.info("*******************************************************");
+        LOGGER.info("Test " + result.getMethod().getMethodName() + " started");
+        LOGGER.info("*******************************************************");
     }
 
     @Override
     public void onTestSuccess(ITestResult result) {
-        System.out.println("*******************************************************");
-        System.out.println("Test " + result.getMethod().getMethodName() + " success");
-        System.out.println("*******************************************************");
+        LOGGER.info("*******************************************************");
+        LOGGER.info("Test " + result.getMethod().getMethodName() + " success");
+        LOGGER.info("*******************************************************");
     }
 
     @Override
     public void onTestFailure(ITestResult result) {
-        System.out.println("*******************************************************");
-        System.out.println("Test " + result.getMethod().getMethodName() + " failed");
-        System.out.println("*******************************************************");
+        LOGGER.info("*******************************************************");
+        LOGGER.info("Test " + result.getMethod().getMethodName() + " failed");
+        LOGGER.info("*******************************************************");
     }
 }

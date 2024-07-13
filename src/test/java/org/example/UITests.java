@@ -10,7 +10,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class UITests extends BaseTest{
-    private static final Logger LOGGER = LogManager.getLogger(TestListeners.class);
+    private static final Logger LOGGER = LogManager.getLogger(UITests.class);
     public static HomePage homePage;
     public static LoginPage loginPage;
     public static ProfilePage profilePage;
@@ -29,13 +29,13 @@ public class UITests extends BaseTest{
     @Test
     public void validPhoneAndPasswordTest() {
         homePage = new HomePage();
-        loginPage = new LoginPage();//xcxgit
+        loginPage = new LoginPage();
         profilePage = new ProfilePage();
         productPage = new ProductPage();
         salePage = new SalePage();
-        //нажимаем кнопку входа в аккаунт
+        LOGGER.info ("нажимаем кнопку входа в аккаунт");
         homePage.clickProfileBtn();
-        //вводим номер телефона
+        LOGGER.info ("вводим номер телефона");
         loginPage.inputPhoneNumber(ConfProperties.getProperty("phone"));
         //вводим пароль
         loginPage.inputPassword(ConfProperties.getProperty("password"));
