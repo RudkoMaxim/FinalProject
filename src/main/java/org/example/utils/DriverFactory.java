@@ -7,6 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class DriverFactory {
+    protected static WebDriver driver;
     private static final Logger LOGGER = LogManager.getLogger(DriverFactory.class);
     public static WebDriver createDriver(String browser) {
         LOGGER.info("Browser: " + browser);

@@ -3,7 +3,6 @@ package org.example.utils;
 import org.apache.commons.lang3.StringUtils;
 import org.example.enums.Capability;
 import org.example.enums.PropertyFile;
-
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Properties;

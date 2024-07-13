@@ -1,7 +1,6 @@
 package org.example.utils;
 
 import org.example.enums.Capability;
-import org.example.listeners.ElementActionListener;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.events.EventFiringDecorator;
 import java.util.concurrent.TimeUnit;
@@ -13,7 +12,7 @@ public class DriverManager {
     public synchronized static WebDriver getDriver() {
         if (localDriver.get() == null) {
             driver = DriverFactory.createDriver(PropertyReader.getConfigProperty(Capability.BROWSER));
-            EventFiringDecorator<WebDriver> decorator = new EventFiringDecorator(new ElementActionListener());
+            EventFiringDecorator<WebDriver> decorator = new EventFiringDecorator();
             driver = decorator.decorate(driver);
             driver.manage().window().maximize();
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);

@@ -5,10 +5,34 @@
 Для тестирования WEB приложения были разработаны API и UI тесты.
 Тестирование проходит при использовании фреймворка Selenium.
 
-Для написания автоматизированных тестов использованы: 
-- NestNG;
-- RestAssured для тестирования API;
-- Selenium WebDriver для тестирования UI;
-- Allure report для создания отчетов;
-- ScreenshotUtils для создания скриншотов;
-- Log4j2 для создания логов.
+Структура проекта: 
+1. enums 
+-Capability
+-PropertyFile
+2. listeners
+-TestListeners 
+3. Pages
+-CartPage
+-HomePage
+-LoginPage
+-ProductPage
+-ProfilePage
+-SalePage
+4. utils
+-ConfProperties
+-DriverFactory
+-DriverManager
+-PropertyReader
+-ScreenShotUtils
+-Waiters
+5. resources
+-config.properties
+-log4j2.properties
+6. tests
+-BaseTest
+-APITests
+-UITests
+7. resources
+-json
+-suites
+-allure.properties

@@ -1,8 +1,5 @@
 package org.example;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-import org.example.listeners.TestListeners;
 import org.example.pages.*;
 import org.example.utils.ConfProperties;
 import org.example.utils.ScreenShotUtils;
@@ -10,7 +7,6 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class UITests extends BaseTest{
-    private static final Logger LOGGER = LogManager.getLogger(UITests.class);
     public static HomePage homePage;
     public static LoginPage loginPage;
     public static ProfilePage profilePage;
@@ -33,9 +29,9 @@ public class UITests extends BaseTest{
         profilePage = new ProfilePage();
         productPage = new ProductPage();
         salePage = new SalePage();
-        LOGGER.info ("нажимаем кнопку входа в аккаунт");
+        //нажимаем кнопку входа в аккаунт
         homePage.clickProfileBtn();
-        LOGGER.info ("вводим номер телефона");
+        //вводим номер телефона
         loginPage.inputPhoneNumber(ConfProperties.getProperty("phone"));
         //вводим пароль
         loginPage.inputPassword(ConfProperties.getProperty("password"));
