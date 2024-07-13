@@ -30,12 +30,6 @@
         </dependencies>
     </dependencyManagement>
     <dependencies>
-
-        <dependency>
-            <groupId>io.qameta.allure</groupId>
-            <artifactId>allure-testng</artifactId>
-        </dependency>
-
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
@@ -139,8 +133,6 @@
                     <argLine> -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar" </argLine>
                 </configuration>
             </plugin>
-
         </plugins>
     </build>
-
 </project>
